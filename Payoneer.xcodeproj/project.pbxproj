@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50194BA0264DB26F00363B48 /* ListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194B9F264DB26F00363B48 /* ListResult.swift */; };
+		50194BA6264DB33100363B48 /* Networks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BA5264DB33100363B48 /* Networks.swift */; };
+		50194BC0264DB7A700363B48 /* ApplicableNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BBF264DB7A700363B48 /* ApplicableNetwork.swift */; };
+		50194BC2264DB7B900363B48 /* InputElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BC1264DB7B900363B48 /* InputElement.swift */; };
+		50194BC4264DB7CE00363B48 /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BC3264DB7CE00363B48 /* FormData.swift */; };
+		50194BC6264DB7EC00363B48 /* AccountFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BC5264DB7EC00363B48 /* AccountFormData.swift */; };
+		50194BC8264DB82900363B48 /* CustomerFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BC7264DB82900363B48 /* CustomerFormData.swift */; };
+		50194BCA264DB84B00363B48 /* Installments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BC9264DB84B00363B48 /* Installments.swift */; };
+		50194BCC264DB86D00363B48 /* PaymentAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BCB264DB86D00363B48 /* PaymentAmount.swift */; };
+		50194BCE264DB89300363B48 /* InstallmentPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BCD264DB89300363B48 /* InstallmentPlans.swift */; };
+		50194BD0264DB8B000363B48 /* InstallmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BCF264DB8B000363B48 /* InstallmentItem.swift */; };
+		50194BD2264DB8D900363B48 /* SelectOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50194BD1264DB8D900363B48 /* SelectOption.swift */; };
+		5023EFF4265942B200DDCDCC /* PaymentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023EFF3265942B200DDCDCC /* PaymentListViewModel.swift */; };
+		5023EFF62659491B00DDCDCC /* PaymentMethodCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023EFF52659491B00DDCDCC /* PaymentMethodCoordinator.swift */; };
+		5023EFF826594E7800DDCDCC /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5023EFF726594E7800DDCDCC /* ApplicationCoordinator.swift */; };
+		502B6677264C4D8D00C867A3 /* PaymentNetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B6676264C4D8D00C867A3 /* PaymentNetworkViewModel.swift */; };
+		502B6679264C4DA600C867A3 /* PaymentNetworkViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B6678264C4DA600C867A3 /* PaymentNetworkViewModelTests.swift */; };
+		502B6682264D537800C867A3 /* PayoneerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B6681264D537800C867A3 /* PayoneerClient.swift */; };
+		509C0E1626595AB2002787FC /* PaymentListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509C0E1526595AB2002787FC /* PaymentListViewModelTests.swift */; };
+		50C77E27265143D600CFDA2C /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C77E26265143D600CFDA2C /* UIState.swift */; };
+		50DB5C81264B1CD30075C344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB5C80264B1CD30075C344 /* AppDelegate.swift */; };
+		50DB5C83264B1CD30075C344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB5C82264B1CD30075C344 /* SceneDelegate.swift */; };
+		50DB5C85264B1CD30075C344 /* PaymentMethodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB5C84264B1CD30075C344 /* PaymentMethodsViewController.swift */; };
+		50DB5C8A264B1CD40075C344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DB5C89264B1CD40075C344 /* Assets.xcassets */; };
+		50DB5C8D264B1CD40075C344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DB5C8B264B1CD40075C344 /* LaunchScreen.storyboard */; };
+		50DB5CA3264B1CD40075C344 /* PayoneerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB5CA2264B1CD40075C344 /* PayoneerUITests.swift */; };
+		50DB5CB7264B20C10075C344 /* PaymentProviderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB5CB5264B20C10075C344 /* PaymentProviderTableViewCell.swift */; };
+		50DB5CB8264B20C10075C344 /* PaymentProviderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DB5CB6264B20C10075C344 /* PaymentProviderTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50DB5C94264B1CD40075C344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50DB5C75264B1CD30075C344 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50DB5C7C264B1CD30075C344;
+			remoteInfo = Payoneer;
+		};
+		50DB5C9F264B1CD40075C344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50DB5C75264B1CD30075C344 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50DB5C7C264B1CD30075C344;
+			remoteInfo = Payoneer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		50194B9F264DB26F00363B48 /* ListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResult.swift; sourceTree = "<group>"; };
+		50194BA5264DB33100363B48 /* Networks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networks.swift; sourceTree = "<group>"; };
+		50194BBF264DB7A700363B48 /* ApplicableNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicableNetwork.swift; sourceTree = "<group>"; };
+		50194BC1264DB7B900363B48 /* InputElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputElement.swift; sourceTree = "<group>"; };
+		50194BC3264DB7CE00363B48 /* FormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormData.swift; sourceTree = "<group>"; };
+		50194BC5264DB7EC00363B48 /* AccountFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFormData.swift; sourceTree = "<group>"; };
+		50194BC7264DB82900363B48 /* CustomerFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFormData.swift; sourceTree = "<group>"; };
+		50194BC9264DB84B00363B48 /* Installments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Installments.swift; sourceTree = "<group>"; };
+		50194BCB264DB86D00363B48 /* PaymentAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAmount.swift; sourceTree = "<group>"; };
+		50194BCD264DB89300363B48 /* InstallmentPlans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentPlans.swift; sourceTree = "<group>"; };
+		50194BCF264DB8B000363B48 /* InstallmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentItem.swift; sourceTree = "<group>"; };
+		50194BD1264DB8D900363B48 /* SelectOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectOption.swift; sourceTree = "<group>"; };
+		5023EFF3265942B200DDCDCC /* PaymentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListViewModel.swift; sourceTree = "<group>"; };
+		5023EFF52659491B00DDCDCC /* PaymentMethodCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodCoordinator.swift; sourceTree = "<group>"; };
+		5023EFF726594E7800DDCDCC /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		502B6676264C4D8D00C867A3 /* PaymentNetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentNetworkViewModel.swift; sourceTree = "<group>"; };
+		502B6678264C4DA600C867A3 /* PaymentNetworkViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentNetworkViewModelTests.swift; sourceTree = "<group>"; };
+		502B6681264D537800C867A3 /* PayoneerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayoneerClient.swift; sourceTree = "<group>"; };
+		509C0E1526595AB2002787FC /* PaymentListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListViewModelTests.swift; sourceTree = "<group>"; };
+		50C77E26265143D600CFDA2C /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
+		50DB5C7D264B1CD30075C344 /* Payoneer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payoneer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DB5C80264B1CD30075C344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		50DB5C82264B1CD30075C344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		50DB5C84264B1CD30075C344 /* PaymentMethodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsViewController.swift; sourceTree = "<group>"; };
+		50DB5C89264B1CD40075C344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50DB5C8C264B1CD40075C344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50DB5C8E264B1CD40075C344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50DB5C93264B1CD40075C344 /* PayoneerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayoneerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DB5C99264B1CD40075C344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50DB5C9E264B1CD40075C344 /* PayoneerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayoneerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DB5CA2264B1CD40075C344 /* PayoneerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayoneerUITests.swift; sourceTree = "<group>"; };
+		50DB5CA4264B1CD40075C344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50DB5CB5264B20C10075C344 /* PaymentProviderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProviderTableViewCell.swift; sourceTree = "<group>"; };
+		50DB5CB6264B20C10075C344 /* PaymentProviderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentProviderTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50DB5C7A264B1CD30075C344 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DB5C90264B1CD40075C344 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DB5C9B264B1CD40075C344 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		502B6674264C4D2B00C867A3 /* PaymentMethod */ = {
+			isa = PBXGroup;
+			children = (
+				5023EFF52659491B00DDCDCC /* PaymentMethodCoordinator.swift */,
+				50DB5CB2264B1E1D0075C344 /* Views */,
+				502B6675264C4D3B00C867A3 /* ViewModel */,
+				50DB5CB3264B1E2D0075C344 /* Controller */,
+			);
+			name = PaymentMethod;
+			sourceTree = "<group>";
+		};
+		502B6675264C4D3B00C867A3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5023EFF3265942B200DDCDCC /* PaymentListViewModel.swift */,
+				502B6676264C4D8D00C867A3 /* PaymentNetworkViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		502B667B264D4A7500C867A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50194BC5264DB7EC00363B48 /* AccountFormData.swift */,
+				50194BBF264DB7A700363B48 /* ApplicableNetwork.swift */,
+				50194BC7264DB82900363B48 /* CustomerFormData.swift */,
+				50194BC3264DB7CE00363B48 /* FormData.swift */,
+				50194BC1264DB7B900363B48 /* InputElement.swift */,
+				50194BCF264DB8B000363B48 /* InstallmentItem.swift */,
+				50194BCD264DB89300363B48 /* InstallmentPlans.swift */,
+				50194BC9264DB84B00363B48 /* Installments.swift */,
+				50194B9F264DB26F00363B48 /* ListResult.swift */,
+				50194BA5264DB33100363B48 /* Networks.swift */,
+				50194BCB264DB86D00363B48 /* PaymentAmount.swift */,
+				50194BD1264DB8D900363B48 /* SelectOption.swift */,
+				50C77E26265143D600CFDA2C /* UIState.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		502B667E264D501600C867A3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				502B6681264D537800C867A3 /* PayoneerClient.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		50DB5C74264B1CD30075C344 = {
+			isa = PBXGroup;
+			children = (
+				50DB5C7F264B1CD30075C344 /* Payoneer */,
+				50DB5C96264B1CD40075C344 /* PayoneerTests */,
+				50DB5CA1264B1CD40075C344 /* PayoneerUITests */,
+				50DB5C7E264B1CD30075C344 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50DB5C7E264B1CD30075C344 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50DB5C7D264B1CD30075C344 /* Payoneer.app */,
+				50DB5C93264B1CD40075C344 /* PayoneerTests.xctest */,
+				50DB5C9E264B1CD40075C344 /* PayoneerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50DB5C7F264B1CD30075C344 /* Payoneer */ = {
+			isa = PBXGroup;
+			children = (
+				50DB5CB1264B1E100075C344 /* Assets */,
+				502B667B264D4A7500C867A3 /* Models */,
+				502B667E264D501600C867A3 /* Networking */,
+				502B6674264C4D2B00C867A3 /* PaymentMethod */,
+				50DB5CB0264B1D9C0075C344 /* Supporting Files */,
+			);
+			path = Payoneer;
+			sourceTree = "<group>";
+		};
+		50DB5C96264B1CD40075C344 /* PayoneerTests */ = {
+			isa = PBXGroup;
+			children = (
+				50DB5C99264B1CD40075C344 /* Info.plist */,
+				509C0E1526595AB2002787FC /* PaymentListViewModelTests.swift */,
+				502B6678264C4DA600C867A3 /* PaymentNetworkViewModelTests.swift */,
+			);
+			path = PayoneerTests;
+			sourceTree = "<group>";
+		};
+		50DB5CA1264B1CD40075C344 /* PayoneerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				50DB5CA2264B1CD40075C344 /* PayoneerUITests.swift */,
+				50DB5CA4264B1CD40075C344 /* Info.plist */,
+			);
+			path = PayoneerUITests;
+			sourceTree = "<group>";
+		};
+		50DB5CB0264B1D9C0075C344 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50DB5C80264B1CD30075C344 /* AppDelegate.swift */,
+				5023EFF726594E7800DDCDCC /* ApplicationCoordinator.swift */,
+				50DB5C82264B1CD30075C344 /* SceneDelegate.swift */,
+				50DB5C8E264B1CD40075C344 /* Info.plist */,
+				50DB5C8B264B1CD40075C344 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50DB5CB1264B1E100075C344 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				50DB5C89264B1CD40075C344 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		50DB5CB2264B1E1D0075C344 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50DB5CB6264B20C10075C344 /* PaymentProviderTableViewCell.xib */,
+				50DB5CB5264B20C10075C344 /* PaymentProviderTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		50DB5CB3264B1E2D0075C344 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50DB5C84264B1CD30075C344 /* PaymentMethodsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50DB5C7C264B1CD30075C344 /* Payoneer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50DB5CA7264B1CD40075C344 /* Build configuration list for PBXNativeTarget "Payoneer" */;
+			buildPhases = (
+				50DB5C79264B1CD30075C344 /* Sources */,
+				50DB5C7A264B1CD30075C344 /* Frameworks */,
+				50DB5C7B264B1CD30075C344 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Payoneer;
+			productName = Payoneer;
+			productReference = 50DB5C7D264B1CD30075C344 /* Payoneer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		50DB5C92264B1CD40075C344 /* PayoneerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50DB5CAA264B1CD40075C344 /* Build configuration list for PBXNativeTarget "PayoneerTests" */;
+			buildPhases = (
+				50DB5C8F264B1CD40075C344 /* Sources */,
+				50DB5C90264B1CD40075C344 /* Frameworks */,
+				50DB5C91264B1CD40075C344 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50DB5C95264B1CD40075C344 /* PBXTargetDependency */,
+			);
+			name = PayoneerTests;
+			productName = PayoneerTests;
+			productReference = 50DB5C93264B1CD40075C344 /* PayoneerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		50DB5C9D264B1CD40075C344 /* PayoneerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50DB5CAD264B1CD40075C344 /* Build configuration list for PBXNativeTarget "PayoneerUITests" */;
+			buildPhases = (
+				50DB5C9A264B1CD40075C344 /* Sources */,
+				50DB5C9B264B1CD40075C344 /* Frameworks */,
+				50DB5C9C264B1CD40075C344 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50DB5CA0264B1CD40075C344 /* PBXTargetDependency */,
+			);
+			name = PayoneerUITests;
+			productName = PayoneerUITests;
+			productReference = 50DB5C9E264B1CD40075C344 /* PayoneerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50DB5C75264B1CD30075C344 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					50DB5C7C264B1CD30075C344 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					50DB5C92264B1CD40075C344 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 50DB5C7C264B1CD30075C344;
+					};
+					50DB5C9D264B1CD40075C344 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 50DB5C7C264B1CD30075C344;
+					};
+				};
+			};
+			buildConfigurationList = 50DB5C78264B1CD30075C344 /* Build configuration list for PBXProject "Payoneer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 50DB5C74264B1CD30075C344;
+			productRefGroup = 50DB5C7E264B1CD30075C344 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50DB5C7C264B1CD30075C344 /* Payoneer */,
+				50DB5C92264B1CD40075C344 /* PayoneerTests */,
+				50DB5C9D264B1CD40075C344 /* PayoneerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50DB5C7B264B1CD30075C344 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DB5C8D264B1CD40075C344 /* LaunchScreen.storyboard in Resources */,
+				50DB5C8A264B1CD40075C344 /* Assets.xcassets in Resources */,
+				50DB5CB8264B20C10075C344 /* PaymentProviderTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DB5C91264B1CD40075C344 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DB5C9C264B1CD40075C344 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50DB5C79264B1CD30075C344 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502B6682264D537800C867A3 /* PayoneerClient.swift in Sources */,
+				50194BCA264DB84B00363B48 /* Installments.swift in Sources */,
+				50194BC2264DB7B900363B48 /* InputElement.swift in Sources */,
+				50DB5C85264B1CD30075C344 /* PaymentMethodsViewController.swift in Sources */,
+				50DB5CB7264B20C10075C344 /* PaymentProviderTableViewCell.swift in Sources */,
+				50194BC4264DB7CE00363B48 /* FormData.swift in Sources */,
+				50194BC8264DB82900363B48 /* CustomerFormData.swift in Sources */,
+				502B6677264C4D8D00C867A3 /* PaymentNetworkViewModel.swift in Sources */,
+				50194BD2264DB8D900363B48 /* SelectOption.swift in Sources */,
+				50DB5C81264B1CD30075C344 /* AppDelegate.swift in Sources */,
+				50194BD0264DB8B000363B48 /* InstallmentItem.swift in Sources */,
+				50194BC6264DB7EC00363B48 /* AccountFormData.swift in Sources */,
+				50194BCE264DB89300363B48 /* InstallmentPlans.swift in Sources */,
+				50194BA0264DB26F00363B48 /* ListResult.swift in Sources */,
+				50194BC0264DB7A700363B48 /* ApplicableNetwork.swift in Sources */,
+				5023EFF4265942B200DDCDCC /* PaymentListViewModel.swift in Sources */,
+				50194BA6264DB33100363B48 /* Networks.swift in Sources */,
+				50DB5C83264B1CD30075C344 /* SceneDelegate.swift in Sources */,
+				50194BCC264DB86D00363B48 /* PaymentAmount.swift in Sources */,
+				50C77E27265143D600CFDA2C /* UIState.swift in Sources */,
+				5023EFF62659491B00DDCDCC /* PaymentMethodCoordinator.swift in Sources */,
+				5023EFF826594E7800DDCDCC /* ApplicationCoordinator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DB5C8F264B1CD40075C344 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				509C0E1626595AB2002787FC /* PaymentListViewModelTests.swift in Sources */,
+				502B6679264C4DA600C867A3 /* PaymentNetworkViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DB5C9A264B1CD40075C344 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DB5CA3264B1CD40075C344 /* PayoneerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50DB5C95264B1CD40075C344 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50DB5C7C264B1CD30075C344 /* Payoneer */;
+			targetProxy = 50DB5C94264B1CD40075C344 /* PBXContainerItemProxy */;
+		};
+		50DB5CA0264B1CD40075C344 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50DB5C7C264B1CD30075C344 /* Payoneer */;
+			targetProxy = 50DB5C9F264B1CD40075C344 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		50DB5C8B264B1CD40075C344 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50DB5C8C264B1CD40075C344 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50DB5CA5264B1CD40075C344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		50DB5CA6264B1CD40075C344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50DB5CA8264B1CD40075C344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Payoneer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = payoneer.Payoneer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50DB5CA9264B1CD40075C344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Payoneer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = payoneer.Payoneer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		50DB5CAB264B1CD40075C344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayoneerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = payoneer.PayoneerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Payoneer.app/Payoneer";
+			};
+			name = Debug;
+		};
+		50DB5CAC264B1CD40075C344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayoneerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = payoneer.PayoneerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Payoneer.app/Payoneer";
+			};
+			name = Release;
+		};
+		50DB5CAE264B1CD40075C344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayoneerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = payoneer.PayoneerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Payoneer;
+			};
+			name = Debug;
+		};
+		50DB5CAF264B1CD40075C344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayoneerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = payoneer.PayoneerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Payoneer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50DB5C78264B1CD30075C344 /* Build configuration list for PBXProject "Payoneer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DB5CA5264B1CD40075C344 /* Debug */,
+				50DB5CA6264B1CD40075C344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50DB5CA7264B1CD40075C344 /* Build configuration list for PBXNativeTarget "Payoneer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DB5CA8264B1CD40075C344 /* Debug */,
+				50DB5CA9264B1CD40075C344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50DB5CAA264B1CD40075C344 /* Build configuration list for PBXNativeTarget "PayoneerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DB5CAB264B1CD40075C344 /* Debug */,
+				50DB5CAC264B1CD40075C344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50DB5CAD264B1CD40075C344 /* Build configuration list for PBXNativeTarget "PayoneerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DB5CAE264B1CD40075C344 /* Debug */,
+				50DB5CAF264B1CD40075C344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50DB5C75264B1CD30075C344 /* Project object */;
+}
