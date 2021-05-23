@@ -30,11 +30,18 @@ class PaymentMethodsViewController: UITableViewController {
     }
     
     private func bindViewProperties() {
-        viewModel
-            .$uiState
+        viewModel.$uiState
             .receive(on: RunLoop.main)
             .sink { [weak self] _ in
                 self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$errorMessage
+            .receive(on: RunLoop.main)
+            .sink { [weak self] message in
+                let alert = UIAlertController(title: "Error Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+                self?.present(alert, animated: true)
             }
             .store(in: &cancellables)
     }

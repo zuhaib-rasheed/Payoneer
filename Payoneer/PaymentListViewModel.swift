@@ -9,6 +9,7 @@ import Combine
 import Foundation
 
 class PaymentListViewModel: ObservableObject {
+    @Published var errorMessage = ""
     @Published var networks = [PaymentNetworkViewModel]()
     @Published var uiState: UIState<ListResult> = .created
 
@@ -17,9 +18,9 @@ class PaymentListViewModel: ObservableObject {
     func fetchProviderDetails() {
         PayoneerApi.paymentMethodsList()
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [weak self]completion in
                 if case let .failure(error) = completion {
-                    print(error)
+                    self?.errorMessage = error.localizedDescription
                 }
             }, receiveValue: { [weak self] response in
                 self?.uiState = .ready(response)

@@ -1,6 +1,10 @@
 import Foundation
 import Combine
 
+enum RequestError: Error {
+    case sessionError(error: Error)
+}
+
 struct PayoneerClient {
     let session = URLSession.shared
     
@@ -20,6 +24,9 @@ struct PayoneerClient {
                 let value = try decoder.decode(T.self, from: result.data)
                 return Response(value: value, response: result.response)
             }
+            .mapError { error -> RequestError in
+                return RequestError.sessionError(error: error)
+            }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
@@ -27,7 +34,7 @@ struct PayoneerClient {
 
 enum PayoneerApi {
     static let client = PayoneerClient()
-    static let url = URL(string: "https://raw.githubusercontent.com/optile/checkout-android/develop/shared-test/lists/listresult.json")!
+    static let url = URL(string: "https://raw.githubusercontent.com/optile/checkout-android/develop/shared-test/lists/listresult.jso")!
 }
 
 extension PayoneerApi {
