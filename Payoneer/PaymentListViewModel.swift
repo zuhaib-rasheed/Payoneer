@@ -8,19 +8,34 @@
 import Combine
 import Foundation
 
+protocol PaymentListViewModelDelegate: AnyObject {
+    func showErrorAlert(message: String)
+}
+
 class PaymentListViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var networks = [PaymentNetworkViewModel]()
     @Published var uiState: UIState<ListResult> = .created
 
+    private weak var delegate: PaymentListViewModelDelegate?
     private var cancellables: Set<AnyCancellable> = []
+    
+    init(delegate: PaymentListViewModelDelegate) {
+        self.delegate = delegate
+    }
     
     func fetchProviderDetails() {
         PayoneerApi.paymentMethodsList()
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { [weak self]completion in
+            .sink(receiveCompletion: { [weak self] completion in
+                guard let self = self else { return }
                 if case let .failure(error) = completion {
-                    self?.errorMessage = error.localizedDescription
+                    switch error {
+                    case let .internalError(statusCode):
+                        self.errorMessage = "Internal error happened with status code: \(statusCode)"
+                    case let .serverError(statusCode):
+                        self.errorMessage = "Server error happened with status code: \(statusCode)"
+                    }
                 }
             }, receiveValue: { [weak self] response in
                 self?.uiState = .ready(response)
@@ -33,5 +48,9 @@ class PaymentListViewModel: ObservableObject {
     
     var paymentNetworksCount: Int {
         networks.count
+    }
+    
+    func displayErrorAlert(message: String) {
+        delegate?.showErrorAlert(message: message)
     }
 }

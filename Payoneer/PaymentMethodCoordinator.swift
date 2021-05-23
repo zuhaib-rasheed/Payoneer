@@ -16,11 +16,19 @@ class PaymentMethodCoordinator: Coordinator {
     }
     
     func start() {
-        let viewModel = PaymentListViewModel()
+        let viewModel = PaymentListViewModel(delegate: self)
         let paymentMethodViewController = PaymentMethodsViewController(viewModel: viewModel)
         paymentMethodViewController.title = "Payment Methods"
         presenter.pushViewController(paymentMethodViewController, animated: true)
     
         self.paymentMethodViewController = paymentMethodViewController
+    }
+}
+
+extension PaymentMethodCoordinator: PaymentListViewModelDelegate {
+    func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.actionSheet)
+        alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+        presenter.present(alert, animated: true)
     }
 }

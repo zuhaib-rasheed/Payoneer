@@ -12,17 +12,20 @@ import Combine
 class PaymentListViewModelTests: XCTestCase {
     var viewModel: PaymentListViewModel!
     var cancellables: Set<AnyCancellable>!
+    var mockDelegate: MockPaymentListViewModelDelegate!
 
     override func setUp() {
         super.setUp()
         cancellables = []
-        viewModel = PaymentListViewModel()
+        mockDelegate = MockPaymentListViewModelDelegate()
+        viewModel = PaymentListViewModel(delegate: mockDelegate)
     }
 
     override func tearDown() {
         super.tearDown()
-        viewModel = nil
         cancellables = nil
+        mockDelegate = nil
+        viewModel = nil
     }
     
     func testFetchProviderDetails() {
@@ -45,5 +48,18 @@ class PaymentListViewModelTests: XCTestCase {
         wait(for: [fetchExpectation], timeout: 5)
         
         XCTAssertFalse(networks.isEmpty)
+    }
+    
+    func testAlertMessage() {
+        viewModel.displayErrorAlert(message: "Internal error happened with status code: 404")
+        XCTAssertEqual(mockDelegate.message, "Internal error happened with status code: 404")
+    }
+}
+
+class MockPaymentListViewModelDelegate: PaymentListViewModelDelegate {
+    var message = ""
+    
+    func showErrorAlert(message: String) {
+        self.message = message
     }
 }

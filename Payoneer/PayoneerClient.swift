@@ -1,8 +1,9 @@
 import Foundation
 import Combine
 
-enum RequestError: Error {
-    case sessionError(error: Error)
+enum ServiceErrors: Error {
+    case internalError(_ statusCode: Int)
+    case serverError(_ statusCode: Int)
 }
 
 struct PayoneerClient {
@@ -13,36 +14,41 @@ struct PayoneerClient {
         let response: URLResponse
     }
     
-    func run<T: Decodable>(_ request: URLRequest, _ decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<Response<T>, Error> {
+    func run<T: Decodable>(_ request: URLRequest, _ decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<Response<T>, ServiceErrors> {
         return URLSession.shared
             .dataTaskPublisher(for: request)
-            .tryMap { result -> Response<T> in
-                guard let httpResponse = result.response as? HTTPURLResponse,
-                      httpResponse.statusCode == 200 else {
-                    throw URLError(.badServerResponse)
+            .tryMap { data, response in
+                guard let httpResponse = response as? HTTPURLResponse,
+                      200..<300 ~= httpResponse.statusCode else {
+                    switch (response as! HTTPURLResponse).statusCode {
+                    case (400...499):
+                        throw ServiceErrors.internalError((response as! HTTPURLResponse).statusCode)
+                    case (500...599):
+                        throw ServiceErrors.serverError((response as! HTTPURLResponse).statusCode)
+                    default:
+                        throw ServiceErrors.serverError((response as! HTTPURLResponse).statusCode)
+                    }
                 }
-                let value = try decoder.decode(T.self, from: result.data)
-                return Response(value: value, response: result.response)
+                let value = try decoder.decode(T.self, from: data)
+                return Response(value: value, response: response)
             }
-            .mapError { error -> RequestError in
-                return RequestError.sessionError(error: error)
-            }
-            .receive(on: DispatchQueue.main)
+            .mapError { $0 as! ServiceErrors }
+            .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }
 }
 
 enum PayoneerApi {
     static let client = PayoneerClient()
-    static let url = URL(string: "https://raw.githubusercontent.com/optile/checkout-android/develop/shared-test/lists/listresult.jso")!
+    static let url = URL(string: "https://raw.githubusercontent.com/optile/checkout-android/develop/shared-test/lists/listresult.json")!
 }
 
 extension PayoneerApi {
-    static func paymentMethodsList() -> AnyPublisher<ListResult, Error> {
+    static func paymentMethodsList() -> AnyPublisher<ListResult, ServiceErrors> {
         return run(URLRequest(url: url))
     }
 
-    static func run<T: Decodable>(_ request: URLRequest) -> AnyPublisher<T, Error> {
+    static func run<T: Decodable>(_ request: URLRequest) -> AnyPublisher<T, ServiceErrors> {
         return client.run(request)
             .map(\.value)
             .eraseToAnyPublisher()

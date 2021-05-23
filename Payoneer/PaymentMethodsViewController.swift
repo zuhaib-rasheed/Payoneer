@@ -40,8 +40,8 @@ class PaymentMethodsViewController: UITableViewController {
         viewModel.$errorMessage
             .receive(on: RunLoop.main)
             .sink { [weak self] message in
-                let alert = UIAlertController(title: "Error Alert", message: message, preferredStyle: UIAlertController.Style.alert)
-                self?.present(alert, animated: true)
+                guard !message.isEmpty else { return }
+                self?.viewModel.displayErrorAlert(message: message)
             }
             .store(in: &cancellables)
     }
