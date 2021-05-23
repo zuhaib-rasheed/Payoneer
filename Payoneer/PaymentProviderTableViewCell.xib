@@ -24,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NYs-Kw-SJq">
                                 <rect key="frame" x="10" y="10" width="335" height="70"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-nz-W3M">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-nz-W3M">
                                         <rect key="frame" x="0.0" y="5" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="FFF-2h-Feb"/>
@@ -70,7 +70,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="logo" width="199.31240844726562" height="70.189582824707031"/>
         <namedColor name="Background">
             <color red="0.93333333333333335" green="0.93333333333333335" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

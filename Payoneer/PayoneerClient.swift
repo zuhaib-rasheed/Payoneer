@@ -13,6 +13,10 @@ struct PayoneerClient {
         return URLSession.shared
             .dataTaskPublisher(for: request)
             .tryMap { result -> Response<T> in
+                guard let httpResponse = result.response as? HTTPURLResponse,
+                      httpResponse.statusCode == 200 else {
+                    throw URLError(.badServerResponse)
+                }
                 let value = try decoder.decode(T.self, from: result.data)
                 return Response(value: value, response: result.response)
             }
